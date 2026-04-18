@@ -1,10 +1,7 @@
 import 'dotenv/config';
 import app from './app';  
 
-//Import routes here below 
-
 //import database connection here as well 
-
 
 const PORT = process.env.PORT || 5400;    
 

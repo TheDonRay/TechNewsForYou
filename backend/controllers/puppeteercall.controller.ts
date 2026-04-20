@@ -4,7 +4,8 @@ import {Request, Response} from 'express';
 // call the services folder to get the puppeteer function 
 
 
-const puppeteerControllerCall = async (req: Request, res: Response) => { 
+const puppeteerControllerCall = async (req: Request, res: Response) => {  
+    // set up try and catch case 
     return res.send('Route is Running successfully'); 
 }; 
 

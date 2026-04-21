@@ -1,12 +1,23 @@
 //TODO:Import the service all which will hold the puppeteer call which we can export and call inside this controller from the services folder.  
 
 import {Request, Response} from 'express';   
-// call the services folder to get the puppeteer function 
+// call the services folder to get the puppeteer function  
+import webscrapesiteOne from '../services/scraper-site1.service.js'; 
 
 
 const puppeteerControllerCall = async (req: Request, res: Response) => {  
     // set up try and catch case 
-    return res.send('Route is Running successfully'); 
+    try { 
+        // invoke the function here as such 
+        const retrieveScrapedData = await webscrapesiteOne(); 
+        // handle some error handling here  
+        if (!retrieveScrapedData) { 
+            throw new Error('Error could not get data from the site'); 
+        } 
+        res.status(201).send(JSON.stringify(retrieveScrapedData)); 
+    } catch (error) { 
+        res.status(500).send(error); 
+    }
 }; 
 
 export default puppeteerControllerCall; 

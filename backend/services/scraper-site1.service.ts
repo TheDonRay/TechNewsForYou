@@ -18,6 +18,6 @@ const webscrapesiteOne = async () : Promise<any> => {
     } catch(error) { 
         console.error('Error visiting site', error); 
     }
-}; 
+};  
 
 export default webscrapesiteOne; 

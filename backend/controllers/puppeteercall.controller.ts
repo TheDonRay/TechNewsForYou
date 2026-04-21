@@ -14,9 +14,9 @@ const puppeteerControllerCall = async (req: Request, res: Response) => {
         if (!retrieveScrapedData) { 
             throw new Error('Error could not get data from the site'); 
         } 
-        res.status(201).send(JSON.stringify(retrieveScrapedData)); 
+        return res.status(201).send(retrieveScrapedData); 
     } catch (error) { 
-        res.status(500).send(error); 
+        return res.status(500).send(error); 
     }
 }; 
 

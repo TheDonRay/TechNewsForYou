@@ -10,13 +10,19 @@ const webscrapesiteOne = async () : Promise<any> => {
 
         await page.goto('https://www.wired.com/');  
         
-        const title = await page.title()
-        console.log('Successfully reached first site, Wired.com, Title is:', title); 
+        const title = await page.title(); 
+
+        await page.click('a[class*="HeadlineLink"]');  
+
+        const articleTitle = await page.title(); 
+
+        console.log('article was clicked, title of it is:', articleTitle); 
 
         await browser.close(); 
-        console.log('WebScraping successfully finished'); 
-    } catch(error) { 
-        console.error('Error visiting site', error); 
+       
+        return { title, articleTitle }; 
+    } catch(error) {
+        console.error('Error visiting site', error);
     }
 };  
 

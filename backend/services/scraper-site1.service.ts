@@ -12,9 +12,12 @@ const webscrapesiteOne = async () : Promise<any> => {
         
         const title = await page.title(); 
 
-        await page.click('a[class*="HeadlineLink"]');  
+        await Promise.all([
+            page.waitForNavigation(), // waits for the page to actually navigate to the new page to fully load after the click 
+            page.click('a[class*="HeadlineLink"]'),
+        ]);
 
-        const articleTitle = await page.title(); 
+        const articleTitle = await page.title();
 
         console.log('article was clicked, title of it is:', articleTitle); 
 

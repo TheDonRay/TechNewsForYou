@@ -26,7 +26,9 @@ const webscrapesiteOne = async () : Promise<any> => {
             console.log('successfully scrolled into view'); 
         } else { 
             console.log('element not found'); 
-        }
+        } 
+
+        // TODO: now set up to actually read the data in that div class
        
 
         console.log('article was clicked, title of it is:', articleTitle); 

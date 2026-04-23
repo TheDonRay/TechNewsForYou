@@ -17,7 +17,17 @@ const webscrapesiteOne = async () : Promise<any> => {
             page.click('a[class*="HeadlineLink"]'),
         ]);
 
-        const articleTitle = await page.title();
+        const articleTitle = await page.title(); 
+
+        // now scroll down to the specific element here as such 
+        const element = await page.$('.body__inner-container'); 
+        if (element)  {
+            await element.evaluate(el => el.scrollIntoView({ behavior: 'smooth', block: 'center'})); 
+            console.log('successfully scrolled into view'); 
+        } else { 
+            console.log('element not found'); 
+        }
+       
 
         console.log('article was clicked, title of it is:', articleTitle); 
 

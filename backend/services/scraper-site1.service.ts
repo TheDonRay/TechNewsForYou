@@ -29,7 +29,7 @@ const webscrapesiteOne = async () : Promise<any> => {
         } 
 
         // TODO: now set up to actually read the data in that div class
-       
+        
 
         console.log('article was clicked, title of it is:', articleTitle); 
 

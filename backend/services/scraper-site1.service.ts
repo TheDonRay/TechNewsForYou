@@ -29,13 +29,14 @@ const webscrapesiteOne = async () : Promise<any> => {
         } 
 
         // TODO: now set up to actually read the data in that div class
-        
+        const text = await page.$eval('p', element => element.textContent); 
+        console.log(text);  
 
         console.log('article was clicked, title of it is:', articleTitle); 
 
         await browser.close(); 
        
-        return { title, articleTitle }; 
+        return { title, articleTitle, text}; // returning object data. 
     } catch(error) {
         console.error('Error visiting site', error);
     }

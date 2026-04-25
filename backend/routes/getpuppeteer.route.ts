@@ -1,9 +1,8 @@
-import express from 'express'; 
-const getPuppeter = express.Router();    
+import express from "express";
+const getPuppeter = express.Router();
 
-import puppeteerController from '../controllers/puppeteercall.controller.js'; 
+import puppeteerController from "../controllers/puppeteercall.controller.js";
 
+getPuppeter.get("/launchtool", puppeteerController);
 
-getPuppeter.get('/launchtool', puppeteerController); 
-
-export default getPuppeter; 
+export default getPuppeter;

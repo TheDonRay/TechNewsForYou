@@ -7,7 +7,8 @@ import webscrapesiteOne from '../services/scraper-site1.service.js';
 
 const puppeteerControllerCall = async (req: Request, res: Response) => {  
     // set up try and catch case 
-    try { 
+    try {  
+        // TODO: change this route to return json object data instead. 
         // invoke the function here as such 
         const retrieveScrapedData = await webscrapesiteOne(); 
         // handle some error handling here  

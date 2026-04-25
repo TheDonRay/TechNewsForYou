@@ -28,7 +28,6 @@ const webscrapesiteOne = async () : Promise<any> => {
             console.log('element not found'); 
         } 
 
-        // TODO: now set up to actually read the data in that div class
         const text = await page.$eval('.body__inner-container p', element => element.textContent); 
         console.log(text);  
 

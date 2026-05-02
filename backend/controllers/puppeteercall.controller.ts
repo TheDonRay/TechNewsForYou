@@ -9,10 +9,16 @@ import OrganizedDataFunction from '../services/organizedData.service.js';
 const puppeteerControllerCall = async (req: Request, res: Response) => {
   // start of with try and catch here
   try { 
-    
+    const data = await OrganizedDataFunction(); 
+    // implement check here 
+    if (!data) { 
+      throw new Error('no data fetched ')
+    } 
+    // send data to open ai to expand on it. 
+    // prompt to test it  
   } catch (error) { 
-
+    console.error('No data fetched', error); 
   }
 };
 
-export default puppeteerControllerCall;
+export default puppeteerControllerCall; 

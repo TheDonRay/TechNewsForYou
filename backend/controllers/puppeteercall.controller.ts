@@ -6,24 +6,9 @@ import webscrapesiteOne from "../services/scraper-site1.service.js";
 // import secondsitescript from "../services/scraper-site2.service.js";
 
 const puppeteerControllerCall = async (req: Request, res: Response) => {
-  // set up try and catch case
+  // start of with try and catch here
   try {
-    // invoke the function here as such
-    const retrieveScrapedData = await webscrapesiteOne();
-    // handle some error handling here
-    if (!retrieveScrapedData) {
-      throw new Error("Error could not get data from the site");
-    }  
-    const organizedObjectData = { 
-      Title: retrieveScrapedData.title, 
-      ArticleTitle: retrieveScrapedData.articleTitle, 
-      ArticleText: retrieveScrapedData.text, 
-    };  
-    // sends the organized Object data below here 
-    return res.status(201).send(organizedObjectData);
-  } catch (error) {
-    return res.status(500).send(error);
-  }
+  } catch (error) {}
 };
 
 export default puppeteerControllerCall;

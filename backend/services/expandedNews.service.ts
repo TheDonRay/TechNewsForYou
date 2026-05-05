@@ -12,7 +12,7 @@ if (!process.env.API_KEY) {
     throw new Error("No API key provided");
 }
 
-const expandOnNews = async () => {
+const expandOnNews = async (): Promise<any> => {
     try {
         const callOrganizedData = await OrganizedDataFunction();
         // handle case call
@@ -33,7 +33,7 @@ const expandOnNews = async () => {
                 }
             ]
         });
-        return expandedNews;
+        return expandedNews.choices[0].message.content;
     } catch (error) {
         throw new Error('Error sending data to API call');
     }

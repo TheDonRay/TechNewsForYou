@@ -55,7 +55,7 @@ const puppeteerControllerCall = async (req: Request, res: Response) => {
     const msg = {
       to: process.env.SENDGRID_TO_EMAIL!,
       from: process.env.SENDGRID_FROM_EMAIL!,
-      subject: 'Your Daily Tech News Summary',
+      subject: 'Latest Tech Updates from Ray',
       text: data,
       html: formatEmailHtml(data),
     };
